@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cambridge Football</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Center all headings and titles */
+   h1, h2, nav ul li a, tr, footer p {
+      text-align: center;
+      color: Lightblue;
+    }
+    nav ul {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+    }
+/* Center videos */
+video {
+  display: block;
+  margin: 0 auto;
+}
+/* Set left and right margins of table to "auto" to center it horizontally */
+table {
+margin: auto;
+}
+/* Set background image */
+body {
+  background-image: url("https://drive.google.com/uc?id=18FetdgqEPisGjWc3imHEAEsVrF5FbTAZ");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav img {
+  width: 40%;
+  height: 40%;
+}
+
+nav p, label, td {
+  color: white;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+main p {
+  color: white;
+}
+
+main section {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home" aria-label="Home">Home</a></li>
+        <li><a href="#about" aria-label="About">About</a></li>
+        <li><a href="#events" aria-label="Events">Events</a></li>
+        <li><a href="#subscribe" aria-label="Subscribe">Subscribe</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section id="home">
+  </section> 
+  
+<main>
+  <section>
+    <img src="https://drive.google.com/uc?export=view&id=1ZEiciLOyOjJbn0_k6kQJmtSbwBtLT9FD" alt="Team Logo">
+    <section id="about">
+    </section>
+    <h1>Welcome to the Cambridge FC Page</h1>
+    <p>Welcome to the homepage of Cambridge Football Club, one of the leading national-level sporting clubs in Australia. We our a proud club with a rich history in supporting local grassroots programs and promoting sportsmanship among its members. This website has been designed to provide all the information you need to stay connected with our community. From match highlights and interviews with players, to game schedules and community events, our website is the ultimate resource for anyone looking to stay informed and engaged with Cambridge FC.
+    </p>
+  </section>
+  <section id="subscribe">
+  </section>
+  <section>
+    <h2>Stay up to date with current events</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+      <button onclick="subscribe()">Subscribe</button>
+      <script>
+      function subscribe() {
+               alert("Thank you for subscribing!");
+      }
+      </script>
+    </form>
+  </section>
+  <section id="events">
+  </section>
+  <section>
+    <h2>Upcoming Matches</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Opponent</th>
+          <th>Location</th>
+          <th>Days Until Match</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>April 15th, 2023</td>
+          <td>Western FC</td>
+          <td>Western Stadium</td>
+          <td id="countdown1"></td>
+        </tr>
+        <tr>
+          <td>April 29th, 2023</td>
+          <td>Sydney FC</td>
+          <td>Sydney Stadium</td>
+          <td id="countdown2"></td>
+        </tr>
+        <tr>
+          <td>May 6th, 2023</td>
+          <td>Melbourne FC</td>
+          <td>Cambridge Home Stadium</td>
+          <td id="countdown3"></td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Countdown script -->
+    <script>
+      // Set the end dates for each match
+      var match1 = new Date("April 15, 2023").getTime();
+      var match2 = new Date("April 29, 2023").getTime();
+      var match3 = new Date("May 6, 2023").getTime();
+  
+      // Update the countdown every second
+      setInterval(function() {
+        // Current date and time
+        var now = new Date().getTime();
+  
+        // Calculate the remaining time for each match
+        var remaining1 = match1 - now;
+        var remaining2 = match2 - now;
+        var remaining3 = match3 - now;
+  
+        // Calculation of the number of days remaining for each match
+        var days1 = Math.floor(remaining1 / (1000 * 60 * 60 * 24));
+        var days2 = Math.floor(remaining2 / (1000 * 60 * 60 * 24));
+        var days3 = Math.floor(remaining3 / (1000 * 60 * 60 * 24));
+  
+        // The number of days remaining for each match
+        document.getElementById("countdown1").innerHTML = days1;
+        document.getElementById("countdown2").innerHTML = days2;
+        document.getElementById("countdown3").innerHTML = days3;
+      }, 1000);
+    </script>
+  </section>
+  <section>
+    <h2>Watch our latest match Highlights</h2>
+    <div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/MSTDpHPRbH4" title="Match Highlights" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </section> 
+  <head>
+    <style>
+      .latest-news div {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="latest-news">
+      <h2>Latest News</h2>
+      <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DV22g1ElAiw" title="Latest News Video" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </body>
+
+<footer>
+  <p>&copy; 2023 Cambridge Football Club. All Rights Reserved.</p>
+</footer>
+</html>
